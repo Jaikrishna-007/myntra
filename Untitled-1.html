@@ -1,0 +1,30 @@
+<style>
+    .hover-line {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hover-line::before {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: red; /* Adjust the color as needed */
+      transform-origin: bottom;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-out;
+    }
+
+    .hover-line:hover::before {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body>
+
+  <p class="hover-line">Hover over this line</p>
+
+</body>
+</html>

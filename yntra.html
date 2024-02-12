@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Myntta</title>
+    <style>
+        /* Navigation Styling */
+        nav a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: rgb(206, 71, 71);
+        }
+
+        /* Table */
+        .hidden-table {
+            display: none;
+        }
+
+        .nav-link:hover + .hidden-table {
+            display: table;
+        }
+
+        /* Button */
+        button {
+            display: block;
+            margin: 0 auto;
+            height: 32px;
+            width: 347px;
+        }
+
+        /* Image */
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Slide Show */
+        .w3-content {
+            max-width: 100%;
+            position: relative;
+        }
+
+        .w3-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 8px 16px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .w3-button:hover {
+            background-color: #333;
+        }
+
+        .w3-display-left {
+            left: 0;
+        }
+
+        .w3-display-right {
+            right: 0;
+        }
+
+        /* Fieldset */
+        fieldset {
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+        }
+
+        fieldset h5 {
+            margin: 2px 0;
+            border-top: 1px solid #ccc;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<img src="d:\html\myntta.jpg" alt="Myntta Logo">
+
+<nav>
+    <a href="#" class="nav-link">MEN</a>
+    <table class="hidden-table">
+        <!-- Men's items here -->
+    </table>
+</nav>
+
+<nav>
+    <a href="#" class="nav-link">WOMEN</a>
+    <table class="hidden-table">
+        <!-- Women's items here -->
+    </table>
+</nav>
+
+<nav>
+    <a href="#" class="nav-link">KIDS</a>
+    <table class="hidden-table">
+        <!-- Kids items here -->
+    </table>
+</nav>
+
+<nav>
+    <a href="#" class="nav-link">HOME & LIVING</a>
+    <table class="hidden-table">
+        <!-- Home & Living items here -->
+    </table>
+</nav>
+
+<nav>
+    <a href="#">BEAUTY</a>
+    <a href="#">STUDIO<sup class="su">new</sup></a>
+</nav>
+
+<button type="text">
+    <i class="bi bi-search"></i>
+    Search for products, brands and more
+</button>
+
+<!-- Slide Show -->
+<div class="w3-content">
+    <!-- Slides here -->
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<!-- Additional Images -->
+<img src="d:\html\medal.jpg" alt="Medal">
+<img src="d:\html\mr.JPG" alt="Mr. Image">
+<img src="d:\html\gram.jpg" alt="Gram Image">
+<img src="d:\html\legm.jpg" alt="Legm Image">
+<img src="d:\html\shopm.jpg" alt="Shopm Image">
+
+<!-- Fieldset -->
+<fieldset>
+    <legend>LINE SHOPPING</legend>
+    <h5>Men</h5>
+    <h5>Women</h5>
+    <h5>Kids</h5>
+    <h5>Home & Living</h5>
+    <h5>Beauty</h5>
+    <h5>Gift Cards</h5>
+    <h5>Myntra Insider</h5>
+    <h5>USEFUL LINKS</h5>
+    <h5>Blog</h5>
+    <h5>Careers</h5>
+    <h5>Site Map</h5>
+    <p>Corporate Information</p>
+    <p>Whitehat</p>
+    <p>Cleartrip</p>
+    <img src="d:\html\face.jpg" alt="Face Image">
+</fieldset>
+
+<!-- Script for Slideshow -->
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+</body>
+</html>

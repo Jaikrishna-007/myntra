@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #chat-container {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        #message-input {
+            width: 300px;
+            margin: 20px auto;
+            display: flex;
+        }
+
+        #message {
+            flex: 1;
+            padding: 10px;
+        }
+
+        #send-btn {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+    <div id="message-input">
+        <input type="text" id="message" placeholder="Type your message...">
+        <button id="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value.trim();
+
+            if (message !== '') {
+                const chatContainer = document.getElementById('chat-container');
+                const newMessage = document.createElement('div');
+                newMessage.textContent = message;
+                chatContainer.appendChild(newMessage);
+
+                // Clear the input field
+                messageInput.value = '';
+
+                // Scroll to the bottom of the chat container
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
